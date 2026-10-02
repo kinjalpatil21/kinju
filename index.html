@@ -474,6 +474,8 @@ max-width:420px;
 
 box-shadow:0 20px 45px rgba(0,0,0,.35);
 
+text-align:center;
+
 }
 
 .bigHeart{
@@ -481,6 +483,15 @@ box-shadow:0 20px 45px rgba(0,0,0,.35);
 font-size:70px;
 
 animation:beat 1s infinite;
+h2{
+
+text-align:center;
+
+margin-top:25px;
+
+color:#8b0000;
+
+}
 
 }
 
@@ -493,16 +504,19 @@ transform:scale(1.15);
 }
 
 }
-
 .finalText{
 
 margin-top:20px;
 
 font-size:20px;
 
-line-height:1.8;
+line-height:2;
 
 color:#6b2d2d;
+
+text-align:center;
+
+white-space:pre-line;
 
 }
   .floatingMsg{
@@ -530,23 +544,45 @@ transform:translateY(-220px) scale(1.2);
 }
 }
   .heart{
+
 position:fixed;
-top:-50px;
+
 font-size:20px;
+
+color:#ffd7e2;
+
+opacity:.22;
+
 pointer-events:none;
-animation:fall 8s linear forwards;
-z-index:999;
+
+user-select:none;
+
+animation:floatHeart 20s linear infinite;
+
+z-index:0;
+
 }
 
-@keyframes fall{
+@keyframes floatHeart{
+
 0%{
-transform:translateY(0) rotate(0deg);
-opacity:1;
-}
-100%{
-transform:translateY(110vh) rotate(360deg);
+transform:translateY(110vh);
 opacity:0;
 }
+
+10%{
+opacity:.22;
+}
+
+90%{
+opacity:.22;
+}
+
+100%{
+transform:translateY(-120px);
+opacity:0;
+}
+
 }
 </style>
 
@@ -917,27 +953,38 @@ msg.remove();
 
 }
 
+function const positions=[
+5,15,28,40,52,64,76,88
+];
+
+let heartIndex=0;
+
 function createHeart(){
 
 const heart=document.createElement("div");
 
 heart.className="heart";
 
-const hearts=["❤️","🤍","💕","💖","💗","🎀"];
+heart.innerHTML="♡";
 
-heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+heart.style.left=positions[heartIndex]+"vw";
 
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.fontSize=(18+Math.random()*18)+"px";
+heart.style.animationDelay=Math.random()*2+"s";
 
 document.body.appendChild(heart);
 
+heartIndex++;
+
+if(heartIndex>=positions.length){
+heartIndex=0;
+}
+
 setTimeout(()=>{
 heart.remove();
-},8000);
+},20000);
 
 }
+
 
 </script>
 </body>
