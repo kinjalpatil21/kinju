@@ -463,6 +463,49 @@ line-height:1.8;
 color:#6b2d2d;
 
 }
+  .floatingMsg{
+position:fixed;
+font-size:18px;
+font-weight:bold;
+color:#ff4d6d;
+pointer-events:none;
+animation:floatUp 6s linear forwards;
+text-shadow:0 0 8px rgba(255,255,255,.8);
+z-index:9999;
+}
+
+@keyframes floatUp{
+0%{
+opacity:0;
+transform:translateY(30px) scale(.8);
+}
+10%{
+opacity:1;
+}
+100%{
+opacity:0;
+transform:translateY(-220px) scale(1.2);
+}
+}
+  .heart{
+position:fixed;
+top:-50px;
+font-size:20px;
+pointer-events:none;
+animation:fall 8s linear forwards;
+z-index:999;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
 </style>
 
 </head>
@@ -659,6 +702,10 @@ I JUSTTTTT LOVVEEEEEEEE YOUUUUUU SOOOOO MUCHHHHHHHHHHHHHHHHHHHHHH 🎀🎀❤️
 <h2>
 
 Forever Yours 🥹❤️
+  <p style="margin-top:20px;font-size:18px;">
+🎀 Made with lots of love, overthinking, excitement,
+and one veryyyy happy girlfriend. 🤍
+</p>
 
 </h2>
 
@@ -783,14 +830,72 @@ document.getElementById("yesBtn").onclick = function () {
     },2000);
 
 };
-
 document.getElementById("lastPage").onclick = function () {
 
     document.getElementById("page5").style.display = "none";
     document.getElementById("page6").style.display = "flex";
 
-};
+    // Start floating messages
+    setInterval(createFloatingMsg,900);
 
+};
+const cuteTexts = [
+"❤️ I love you",
+"🥹 My Baby",
+"😘 Mwahhh",
+"💕 Forever Us",
+"🫶 You're my favourite",
+"💌 Mine",
+"🌍 My Whole World",
+"🤍 Lucky to have you",
+"🥺 Cutest Boy",
+"💖 You're enough",
+"🎀 Sweetheart",
+"✨ Always You"
+];
+
+function createFloatingMsg(){
+
+const msg=document.createElement("div");
+
+msg.className="floatingMsg";
+
+msg.innerHTML=cuteTexts[Math.floor(Math.random()*cuteTexts.length)];
+
+msg.style.left = "50%";
+msg.style.transform = "translateX(-50%)";
+
+msg.style.top="100vh";
+
+document.body.appendChild(msg);
+
+setTimeout(()=>{
+msg.remove();
+},6000);
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+const hearts=["❤️","🤍","💕","💖","💗","🎀"];
+
+heart.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(18+Math.random()*18)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
 
 </script>
 </body>
