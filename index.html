@@ -289,6 +289,29 @@ opacity:.4;
 }
 
 }
+  #page3{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+overflow:auto;
+
+}
 .paper{
 
 width:90%;
@@ -320,7 +343,126 @@ font-size:17px;
 text-align:left;
 
 }
+#page4{
 
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+overflow:auto;
+
+}
+
+.polaroid{
+
+background:white;
+
+padding:10px;
+
+margin:20px auto;
+
+width:240px;
+
+border-radius:8px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.3);
+
+transform:rotate(-2deg);
+
+}
+
+.polaroid img{
+
+width:100%;
+
+display:block;
+
+border-radius:6px;
+
+}
+  #page5{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+padding:20px;
+
+overflow:auto;
+
+text-align:center;
+
+}
+
+.finalCard{
+
+background:#fff7f3;
+
+padding:35px;
+
+border-radius:25px;
+
+max-width:420px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+.bigHeart{
+
+font-size:70px;
+
+animation:beat 1s infinite;
+
+}
+
+@keyframes beat{
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+}
+
+.finalText{
+
+margin-top:20px;
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#6b2d2d;
+
+}
 </style>
 
 </head>
@@ -421,80 +563,147 @@ Our Memories 📸
 </div>
 
 </div>
+
+  <!-- PAGE 4 -->
+
+<div id="page4" style="display:none;">
+
+<div class="paper">
+
+<h1>📸 Our Memories 📸</h1>
+
+<div class="polaroid">
+
+<img src="YOUR_PHOTO_1">
+
+<p>Our favourite memory ❤️</p>
+
+</div>
+
+<div class="polaroid">
+
+<img src="YOUR_PHOTO_2">
+
+<p>Forever my favourite person 🥹</p>
+
+</div>
+
+<div style="text-align:center;">
+
+<button id="lastPage">
+
+One Last Surprise ❤️
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+  <!-- PAGE 5 -->
+
+<div id="page5" style="display:none;">
+
+<div class="finalCard">
+
+<div class="bigHeart">
+❤️
+</div>
+
+<h1>SWEETHEARTTT❤️🎀</h1></h1>
+
+<p class="finalText"> 
+
+Thank you for LOVINGGG me
+
+Thank you for being my biggest SUPPORTTER🥹❤️.
+
+Thank you for beingMY FAV PLACE, MY FAV NOTIFICATION, MY LOVELYY BABYY, MYY SWEETUU ,MY BESTT FRIENDDD .
+  
+I don't even know where to start because there are so many things I feel for you that words will never be enough. Thank you for being my person, for choosing me, for loving me even on the days I'm hard to love. You make my world feel so safe, so warm, and so full of love.
+I hope this little surprise made you smile.
+
+I JUSTTTTT LOVVEEEEEEEE YOUUUUUU SOOOOO MUCHHHHHHHHHHHHHHHHHHHHHH 🎀🎀❤️❤️❤️❤️❤️❤️
+  MUAAAHHHHHHHHHHHHHHHHHHHH❤️
+
+</p>
+
+<h2>
+
+Forever Yours 🥹❤️
+
+</h2>
+
+</div>
+
+</div>
 <script>
 
-document.getElementById("page1").onclick=function(){
-
-document.getElementById("page1").style.display="none";
-
-document.getElementById("page2").style.display="flex";
-
-}
-
-document.getElementById("sendBtn").onclick=function(){
-
-let msg=document.getElementById("reply").value.trim();
-
-if(msg=="") return;
-
-document.getElementById("replyBox").style.display="none";
-
-const box=document.getElementById("messages");
-
-setTimeout(function(){
-
-box.innerHTML+=`
-<div class="hisMsg">${msg}</div>
-`;
-
-},500);
-
-setTimeout(function(){
-
-box.innerHTML+=`
-<div class="myMsg">
-Happy Boyfriend's Dayyyy ❤️🥹
-</div>
-`;
-
-},2500);
-
-setTimeout(function(){
-
-box.innerHTML+=`
-<div class="myMsg">
-I made something only for you...
-</div>
-`;
-
-},5000);
-setTimeout(function(){
-
-box.innerHTML+=`
-<div style="text-align:center;margin-top:30px;">
-<button id="continueBtn">
-Continue ❤️
-</button>
-</div>
-`;
-
-},7500);
-
-setTimeout(function(){
-
-document.getElementById("continueBtn").onclick=function(){
-
-document.getElementById("page2").style.display="none";
-
-document.getElementById("page3").style.display="flex";
-
+document.getElementById("page1").onclick = function () {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "flex";
 };
 
-},7600);
+document.getElementById("sendBtn").onclick = function () {
 
+    let msg = document.getElementById("reply").value.trim();
+
+    if (msg == "") return;
+
+    document.getElementById("replyBox").style.display = "none";
+
+    const box = document.getElementById("messages");
+
+    setTimeout(function () {
+        box.innerHTML += `
+        <div class="hisMsg">${msg}</div>
+        `;
+    }, 500);
+
+    setTimeout(function () {
+        box.innerHTML += `
+        <div class="myMsg">
+        Happy Boyfriend's Dayyyy ❤️🥹
+        </div>
+        `;
+    }, 2500);
+
+    setTimeout(function () {
+        box.innerHTML += `
+        <div class="myMsg">
+        I made something only for you...
+        </div>
+        `;
+    }, 5000);
+
+    setTimeout(function () {
+        box.innerHTML += `
+        <div style="text-align:center;margin-top:30px;">
+            <button id="continueBtn">Continue ❤️</button>
+        </div>
+        `;
+    }, 7500);
+
+    setTimeout(function () {
+        document.getElementById("continueBtn").onclick = function () {
+            document.getElementById("page2").style.display = "none";
+            document.getElementById("page3").style.display = "flex";
+        };
+    }, 7600);
+
+}; // End send button
+
+document.getElementById("nextBtn").onclick = function () {
+    document.getElementById("page3").style.display = "none";
+    document.getElementById("page4").style.display = "flex";
+};
+
+document.getElementById("lastPage").onclick = function () {
+    document.getElementById("page4").style.display = "none";
+    document.getElementById("page5").style.display = "flex";
 };
 
 </script>
 </body>
-
 </html>
