@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Boyfriend's Day ❤️</title>
 
@@ -20,66 +20,52 @@ font-family:'Trebuchet MS',sans-serif;
 
 body{
 
+background:linear-gradient(135deg,#4b0715,#2b0008);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
 height:100vh;
+
 overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:#5b0b16;
-
-background-image:
-url("https://i.imgur.com/OGN3QSE.png");
-
-background-size:300px;
-
-background-repeat:repeat;
-
-}
-
-#intro{
-
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-
-backdrop-filter:blur(2px);
 
 }
 
 .card{
 
 width:90%;
+
 max-width:390px;
 
-background:#fff9f1;
-
-border-radius:25px;
+background:#fff8ef;
 
 padding:30px;
 
+border-radius:25px;
+
 box-shadow:0 20px 40px rgba(0,0,0,.35);
 
-text-align:center;
-
-animation:show .8s;
+animation:fade .8s;
 
 }
 
-@keyframes show{
+@keyframes fade{
 
 from{
 
 opacity:0;
-transform:translateY(40px);
+
+transform:translateY(35px);
 
 }
 
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
@@ -88,15 +74,22 @@ transform:translateY(0);
 
 h1{
 
+text-align:center;
+
 color:#8b0000;
+
 margin-bottom:15px;
 
 }
 
 .subtitle{
 
+text-align:center;
+
 color:#5b3a29;
+
 line-height:1.8;
+
 margin-bottom:25px;
 
 }
@@ -104,7 +97,9 @@ margin-bottom:25px;
 .chat{
 
 display:flex;
+
 flex-direction:column;
+
 gap:12px;
 
 }
@@ -117,7 +112,7 @@ background:#ffe4e8;
 
 padding:12px 16px;
 
-border-radius:18px 18px 18px 4px;
+border-radius:18px 18px 18px 5px;
 
 max-width:85%;
 
@@ -133,7 +128,7 @@ color:white;
 
 padding:12px 16px;
 
-border-radius:18px 18px 4px 18px;
+border-radius:18px 18px 5px 18px;
 
 max-width:85%;
 
@@ -143,17 +138,17 @@ input{
 
 width:100%;
 
-padding:13px;
+padding:14px;
 
 border-radius:30px;
 
-border:2px solid #d8b8b8;
+border:2px solid #e4c7c7;
 
-margin-top:10px;
+outline:none;
 
 font-size:16px;
 
-outline:none;
+margin-top:10px;
 
 }
 
@@ -175,21 +170,20 @@ font-size:16px;
 
 cursor:pointer;
 
+transition:.3s;
+
 }
 
 button:hover{
 
-transform:scale(1.04);
+transform:scale(1.05);
 
 }
 
 </style>
 
 </head>
-
 <body>
-
-<div id="intro">
 
 <div class="card">
 
@@ -198,6 +192,8 @@ transform:scale(1.04);
 <p class="subtitle">
 
 Before I let you enter...
+
+<br><br>
 
 Say hello to me first. 🥹❤️
 
@@ -215,6 +211,7 @@ Hieeeee Babyyyy ❤️
 
 <input
 id="reply"
+type="text"
 placeholder="Type Hii Baby ❤️"
 >
 
@@ -227,8 +224,6 @@ Send ❤️
 </div>
 
 <div id="messages"></div>
-
-</div>
 
 </div>
 
@@ -252,15 +247,33 @@ document.getElementById("replyBox").style.display="none";
 
 document.getElementById("messages").innerHTML=`
 
-<div class="hisMsg">${msg}</div>
+<div class="hisMsg">
 
-<div class="myMsg">Happy Boyfriend's Dayyyyy ❤️🥹</div>
+${msg}
 
-<div class="myMsg">I made something only for you...</div>
+</div>
 
 <div class="myMsg">
 
-<button onclick="alert('Page 1 coming next ❤️')">
+Happy Boyfriend's Dayyyyy ❤️🥹
+
+</div>
+
+<div class="myMsg">
+
+I made something only for you...
+
+</div>
+
+<div class="myMsg">
+
+Every page was made with lots of love ❤️
+
+</div>
+
+<div class="myMsg">
+
+<button id="continueBtn">
 
 Continue ❤️
 
@@ -270,10 +283,15 @@ Continue ❤️
 
 `;
 
+document.getElementById("continueBtn").onclick=function(){
+
+window.location.href="letter.html";
+
+}
+
 }
 
 </script>
-
 </body>
 
 </html>
