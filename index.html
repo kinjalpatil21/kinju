@@ -314,22 +314,63 @@ overflow:auto;
 }
 .paper{
 
+position:relative;
+
 width:90%;
 
-max-width:420px;
+max-width:450px;
 
-background:#fff7f3;
+background:#fdf7eb;
 
-padding:30px;
+padding:40px;
 
-border-radius:25px;
+border-radius:18px;
 
-box-shadow:0 20px 45px rgba(0,0,0,.35);
+box-shadow:
+0 18px 40px rgba(0,0,0,.35),
+0 0 0 10px rgba(255,255,255,.08);
 
 animation:fade .8s;
 
+overflow:hidden;
+
+}
+.paper::before{
+
+content:"🎀";
+
+position:absolute;
+
+top:-18px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:58px;
+
 }
 
+.paper::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+right:0;
+top:0;
+bottom:0;
+
+pointer-events:none;
+
+background-image:
+url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+
+opacity:.22;
+
+}
+  
 .letter{
 
 margin-top:20px;
