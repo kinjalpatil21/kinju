@@ -44,7 +44,7 @@ width:92%;
 
 max-width:430px;
 
-min-height:560px;
+min-height:600px;
 
 padding:35px;
 
@@ -58,15 +58,7 @@ flex-direction:column;
 
 justify-content:flex-start;
 
-}
-
-background:#fff8ef;
-
-padding:30px;
-
-border-radius:25px;
-
-box-shadow:0 20px 40px rgba(0,0,0,.35);
+box-shadow:0 20px 45px rgba(0,0,0,.35);
 
 animation:fade .8s;
 
@@ -128,7 +120,7 @@ min-height:340px;
 
 }
 
-}
+
 
 .myMsg{
 
@@ -205,46 +197,154 @@ button:hover{
 transform:scale(1.05);
 
 }
+#page1{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+#page2{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.welcomeBox{
+
+background:#fffaf3;
+
+width:90%;
+
+max-width:370px;
+
+padding:45px 30px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+position:relative;
+
+}
+
+.welcomeBox::before{
+
+content:"🎀";
+
+font-size:45px;
+
+position:absolute;
+
+top:-22px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+}
+
+.tap{
+
+margin-top:30px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#8b0000;
+
+animation:blink 1.2s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.4;
+
+}
+
+}
 
 </style>
 
 </head>
 <body>
 
-<div class="card">
+<!-- PAGE 1 -->
+
+<div id="page1">
+
+<div class="welcomeBox">
 
 <h1>Hieeeee Babyyyy ❤️</h1>
 
-<p class="subtitle">
-
-Before I let you enter...
-
-<br><br>
-
-Say hello to me first. 🥹❤️
-
+<p>
+I made something only for you...
 </p>
+
+<div class="tap">
+Tap Anywhere ❤️
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div id="page2" style="display:none;">
+
+<div class="card">
+
+<h1>❤️</h1>
 
 <div class="chat">
 
 <div class="myMsg">
-
 Hieeeee Babyyyy ❤️
-
 </div>
 
 <div id="replyBox">
 
 <input
 id="reply"
-type="text"
-placeholder="Type Hii Baby ❤️"
+placeholder="Message..."
 >
 
 <button id="sendBtn">
-
 Send ❤️
-
 </button>
 
 </div>
@@ -255,83 +355,74 @@ Send ❤️
 
 </div>
 
+</div>
+
 <script>
+
+document.getElementById("page1").onclick=function(){
+
+document.getElementById("page1").style.display="none";
+
+document.getElementById("page2").style.display="flex";
+
+}
 
 document.getElementById("sendBtn").onclick=function(){
 
 let msg=document.getElementById("reply").value.trim();
 
-if(msg==""){
-
-alert("At least say Hiiiii ❤️");
-
-return;
-
-}
+if(msg=="") return;
 
 document.getElementById("replyBox").style.display="none";
 
 const box=document.getElementById("messages");
 
-box.innerHTML="";
-
-setTimeout(()=>{
+setTimeout(function(){
 
 box.innerHTML+=`
 <div class="hisMsg">${msg}</div>
 `;
 
-},700);
+},500);
 
-setTimeout(()=>{
+setTimeout(function(){
 
 box.innerHTML+=`
 <div class="myMsg">
-Happy Boyfriend's Dayyyyy ❤️🥹
+Happy Boyfriend's Dayyyy ❤️🥹
 </div>
 `;
 
 },2500);
 
-setTimeout(()=>{
+setTimeout(function(){
 
 box.innerHTML+=`
 <div class="myMsg">
-I made something only for you... ❤️
+I made something only for you...
 </div>
 `;
 
-},4500);
+},5000);
 
-setTimeout(()=>{
-
-box.innerHTML+=`
-<div class="myMsg">
-Every page is filled with memories, love and little surprises. 🥹❤️
-</div>
-`;
-
-},6500);
-
-setTimeout(()=>{
+setTimeout(function(){
 
 box.innerHTML+=`
-<div style="margin-top:25px;text-align:center;">
+<div style="text-align:center;margin-top:30px;">
+
 <button id="continueBtn">
+
 Continue ❤️
+
 </button>
+
 </div>
 `;
 
-document.getElementById("continueBtn").onclick=function(){
-
-// Page 2 code will go here later
-
-};
-
-},8500);
+},7500);
 
 }
+
 </script>
 </body>
 
