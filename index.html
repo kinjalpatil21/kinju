@@ -19,26 +19,46 @@ font-family:'Trebuchet MS',sans-serif;
 }
 
 body{
-
-background:linear-gradient(135deg,#4b0715,#2b0008);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-height:100vh;
-
+margin:0;
 overflow:hidden;
+font-family:'Trebuchet MS',sans-serif;
+
+background:
+linear-gradient(rgba(255,255,255,.08),rgba(255,255,255,.08)),
+url("https://www.transparenttextures.com/patterns/cream-paper.png"),
+repeating-linear-gradient(
+45deg,
+#7d0918 0px,
+#7d0918 40px,
+#9d2235 40px,
+#9d2235 80px
+);
+
+background-size:cover;
 
 }
 
 .card{
 
-width:90%;
+width:92%;
 
-max-width:390px;
+max-width:430px;
+
+min-height:560px;
+
+padding:35px;
+
+background:#fffaf5;
+
+border-radius:28px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-start;
+
+}
 
 background:#fff8ef;
 
@@ -100,7 +120,13 @@ display:flex;
 
 flex-direction:column;
 
-gap:12px;
+gap:18px;
+
+margin-top:15px;
+
+min-height:340px;
+
+}
 
 }
 
@@ -245,52 +271,67 @@ return;
 
 document.getElementById("replyBox").style.display="none";
 
-document.getElementById("messages").innerHTML=`
+const box=document.getElementById("messages");
 
-<div class="hisMsg">
+box.innerHTML="";
 
-${msg}
+setTimeout(()=>{
 
-</div>
+box.innerHTML+=`
+<div class="hisMsg">${msg}</div>
+`;
 
+},700);
+
+setTimeout(()=>{
+
+box.innerHTML+=`
 <div class="myMsg">
-
 Happy Boyfriend's Dayyyyy ❤️🥹
-
 </div>
+`;
 
+},2500);
+
+setTimeout(()=>{
+
+box.innerHTML+=`
 <div class="myMsg">
-
-I made something only for you...
-
+I made something only for you... ❤️
 </div>
+`;
 
+},4500);
+
+setTimeout(()=>{
+
+box.innerHTML+=`
 <div class="myMsg">
-
-Every page was made with lots of love ❤️
-
+Every page is filled with memories, love and little surprises. 🥹❤️
 </div>
+`;
 
-<div class="myMsg">
+},6500);
 
+setTimeout(()=>{
+
+box.innerHTML+=`
+<div style="margin-top:25px;text-align:center;">
 <button id="continueBtn">
-
 Continue ❤️
-
 </button>
-
 </div>
-
 `;
 
 document.getElementById("continueBtn").onclick=function(){
 
-window.location.href="letter.html";
+// Page 2 code will go here later
+
+};
+
+},8500);
 
 }
-
-}
-
 </script>
 </body>
 
