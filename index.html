@@ -481,7 +481,8 @@ I made something only for you...
 </p>
 
 <div class="tap">
-Tap Anywhere ❤️
+READYY!!?❤️
+  (could not do as i planned,so sorrryyy!!!)
 </div>
 
 </div>
@@ -528,21 +529,20 @@ Send ❤️
 
 <div class="paper">
 
-<h1>💌 Happy Boyfriend's Day 💌</h1>
+<h1>HAAPPPYYY BOYYFRIENDD'S DAYYY BABBBUUU DIIIII💕💌</h1>
 
 <p class="letter">
 
-My Dearest Love,
+MYY LOVEEEE,
 
 <br><br>
 
-Every moment with you has become one of my favourite memories.
+Every lil thing with you has become one of my FAV MEMORIESS.
 
-Thank you for making me smile, listening to my endless talks, supporting me, and loving me in your own beautiful way.
+Thank you for making me smileee, listening to my endless, annoyingg, weirdd talks, supporting me, and loving me in suchhh beautiful way.
+I don't even know where to start because everythinggg happened between us from the very start has been so unplanneddd like literallyy we weren't taking each of ourself seriouslyy, but u see it noww we can't just not be away for hrs or say mins😭😭, and that what ig love did to us ilyyy❤️
+writing this has took me back to very beginning...soo shall i also take uu??  
 
-You make ordinary days feel special, and my happiest place will always be with you.
-
-I hope this little surprise makes you smile because you deserve every bit of happiness in the world.
 
 <br><br>
 
@@ -551,11 +551,38 @@ I hope this little surprise makes you smile because you deserve every bit of hap
 </p>
 
 <div style="text-align:center;margin-top:25px;">
-
 <button id="nextBtn">
+One More Thing... 🥺❤️
+</button>
 
-Our Memories 📸
 
+</div>
+
+</div>
+
+</div>
+  <!-- PAGE 4 -->
+
+<div id="page4" style="display:none;">
+
+<div class="paper">
+
+<h1>One Tiny Question 🥺❤️</h1>
+
+<p class="letter" style="text-align:center;">
+
+Did my little surprise make you smileee? 🥹💕
+
+</p>
+
+<div style="text-align:center;margin-top:35px;">
+
+<button id="yesBtn">
+Yesss 🥹❤️
+</button>
+
+<button id="noBtn" style="margin-left:15px;">
+No 😒
 </button>
 
 </div>
@@ -564,9 +591,9 @@ Our Memories 📸
 
 </div>
 
-  <!-- PAGE 4 -->
+  <!-- PAGE  5 -->
 
-<div id="page4" style="display:none;">
+<div id="page5" style="display:none;">
 
 <div class="paper">
 
@@ -601,9 +628,9 @@ One Last Surprise ❤️
 </div>
 
 </div>
-  <!-- PAGE 5 -->
+  <!-- PAGE 6 -->
 
-<div id="page5" style="display:none;">
+<div id="page6" style="display:none;">
 
 <div class="finalCard">
 
@@ -611,7 +638,7 @@ One Last Surprise ❤️
 ❤️
 </div>
 
-<h1>SWEETHEARTTT❤️🎀</h1></h1>
+<h1>SWEETHEARTTT❤️🎀</h1>
 
 <p class="finalText"> 
 
@@ -621,7 +648,7 @@ Thank you for being my biggest SUPPORTTER🥹❤️.
 
 Thank you for beingMY FAV PLACE, MY FAV NOTIFICATION, MY LOVELYY BABYY, MYY SWEETUU ,MY BESTT FRIENDDD .
   
-I don't even know where to start because there are so many things I feel for you that words will never be enough. Thank you for being my person, for choosing me, for loving me even on the days I'm hard to love. You make my world feel so safe, so warm, and so full of love.
+ there are so many things I feel for you that words will never be enough. Thank you for being my person, for choosing me, for loving me even on the days I'm hard to love. You make my world feel so safe, so warm, and so full of love.
 I hope this little surprise made you smile.
 
 I JUSTTTTT LOVVEEEEEEEE YOUUUUUU SOOOOO MUCHHHHHHHHHHHHHHHHHHHHHH 🎀🎀❤️❤️❤️❤️❤️❤️
@@ -693,16 +720,77 @@ document.getElementById("sendBtn").onclick = function () {
     }, 7600);
 
 }; // End send button
-
 document.getElementById("nextBtn").onclick = function () {
     document.getElementById("page3").style.display = "none";
     document.getElementById("page4").style.display = "flex";
 };
 
-document.getElementById("lastPage").onclick = function () {
-    document.getElementById("page4").style.display = "none";
-    document.getElementById("page5").style.display = "flex";
+const noBtn = document.getElementById("noBtn");
+
+const texts = [
+"No 😒",
+"Are you sure? 🥺",
+"Think Again 😭",
+"Reallyyy? 🥹",
+"Pleaseee? ❤️",
+"Hehe Catch Me 😝",
+"Wrong Answer 😂",
+"Try Again 🤭",
+"Only Yes Allowed 😌💕"
+];
+
+let count = 0;
+
+function moveNoButton(){
+
+    noBtn.style.position = "absolute";
+    noBtn.style.left = Math.random()*250 + "px";
+    noBtn.style.top = Math.random()*450 + "px";
+
+    count++;
+    noBtn.innerHTML = texts[count % texts.length];
+
+}
+
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", function(e){
+    e.preventDefault();
+    moveNoButton();
+});
+
+   
+document.getElementById("yesBtn").onclick = function () {
+
+    document.querySelector("#page4 .paper").innerHTML = `
+        <h1>YAYYYYYY!! 🥹❤️</h1>
+
+        <p style="font-size:20px;line-height:2;text-align:center;">
+
+        I knewww you'd smileeee!! 🥹❤️<br><br>
+
+        Sending you the biggest hug 🤗<br><br>
+
+        Loading our memories...📸💕
+
+        </p>
+    `;
+
+    setTimeout(function(){
+
+        document.getElementById("page4").style.display = "none";
+        document.getElementById("page5").style.display = "flex";
+
+    },2000);
+
 };
+
+document.getElementById("lastPage").onclick = function () {
+
+    document.getElementById("page5").style.display = "none";
+    document.getElementById("page6").style.display = "flex";
+
+};
+
 
 </script>
 </body>
