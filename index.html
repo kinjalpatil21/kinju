@@ -22,13 +22,10 @@ body{
 margin:0;
 overflow:hidden;
 font-family:'Trebuchet MS',sans-serif;
-
-background-image:
-linear-gradient(rgba(255,255,255,.08),rgba(255,255,255,.08)),
-url("https://www.transparenttextures.com/patterns/cream-paper.png");
-
+background:linear-gradient(180deg,#5b0d18,#7b1830,#5b0d18);
 background-size:cover;
-background-repeat:repeat;
+background-repeat:no-repeat;
+position:relative;
 }
 
 .card{
@@ -483,6 +480,7 @@ text-align:center;
 font-size:70px;
 
 animation:beat 1s infinite;
+}
 h2{
 
 text-align:center;
@@ -491,7 +489,6 @@ margin-top:25px;
 
 color:#8b0000;
 
-}
 
 }
 
@@ -924,7 +921,6 @@ const cuteTexts = [
 "💕 Forever Us",
 "🫶 You're my favourite",
 "💌 Mine",
-"🌍 My Whole World",
 "🤍 Lucky to have you",
 "🥺 Cutest Boy",
 "💖 You're enough",
@@ -953,13 +949,15 @@ msg.remove();
 
 }
 
-function const positions=[
+const positions = [
 5,15,28,40,52,64,76,88
 ];
 
+let heartIndex = 0;
 let heartIndex=0;
 
 function createHeart(){
+setInterval(createHeart,2500);
 
 const heart=document.createElement("div");
 
