@@ -22,7 +22,10 @@ body{
 margin:0;
 overflow:hidden;
 font-family:'Trebuchet MS',sans-serif;
-background:linear-gradient(180deg,#5b0d18,#7b1830,#5b0d18);
+background:#e8d3ad;
+background-image:
+linear-gradient(rgba(255,255,255,.08),rgba(255,255,255,.08)),
+url("https://www.transparenttextures.com/patterns/old-paper.png");
 background-size:cover;
 background-repeat:no-repeat;
 position:relative;
@@ -433,7 +436,7 @@ display:block;
 border-radius:6px;
 
 }
-  #page5{
+  #page6{
 
 position:fixed;
 
@@ -460,19 +463,14 @@ text-align:center;
 }
 
 .finalCard{
-
+width:90%;
+max-width:430px;
+margin:auto;
 background:#fff7f3;
-
 padding:35px;
-
 border-radius:25px;
-
-max-width:420px;
-
 box-shadow:0 20px 45px rgba(0,0,0,.35);
-
 text-align:center;
-
 }
 
 .bigHeart{
@@ -835,11 +833,18 @@ document.getElementById("sendBtn").onclick = function () {
     }, 7500);
 
     setTimeout(function () {
-        document.getElementById("continueBtn").onclick = function () {
-            document.getElementById("page2").style.display = "none";
-            document.getElementById("page3").style.display = "flex";
-        };
-    }, 7600);
+
+    document.getElementById("continueBtn").onclick = function () {
+
+        document.getElementById("page2").style.display = "none";
+        document.getElementById("page3").style.display = "flex";
+
+        typeLetter();
+
+    };
+
+},7600);
+   7600);
 
 }; // End send button
 document.getElementById("nextBtn").onclick = function () {
@@ -948,16 +953,63 @@ msg.remove();
 },6000);
 
 }
+function typeWriter(element, text, speed){
+
+let i = 0;
+element.innerHTML = "";
+
+function typing(){
+
+if(i < text.length){
+
+element.innerHTML += text.charAt(i);
+i++;
+
+setTimeout(typing, speed);
+
+}
+
+}
+
+typing();
+
+}
+function typeLetter(){
+
+const letter=document.querySelector(".letter");
+
+const fullHTML=letter.innerHTML;
+
+const words=fullHTML.split(" ");
+
+letter.innerHTML="";
+
+let i=0;
+
+function write(){
+
+if(i<words.length){
+
+letter.innerHTML+=words[i]+" ";
+
+i++;
+
+setTimeout(write,180);
+
+}
+
+}
+
+write(); 
+} 
 
 const positions = [
 5,15,28,40,52,64,76,88
 ];
 
 let heartIndex = 0;
-let heartIndex=0;
 
 function createHeart(){
-setInterval(createHeart,2500);
 
 const heart=document.createElement("div");
 
@@ -982,8 +1034,9 @@ heart.remove();
 },20000);
 
 }
+setInterval(createHeart,2500);
 
-
+createHeart();
 </script>
 </body>
 </html>
